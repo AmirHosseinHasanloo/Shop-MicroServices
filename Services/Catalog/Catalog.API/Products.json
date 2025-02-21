@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "Dell Laptop",
+        "Category": "Laptop",
+        "Summary": "Dell is good laptop",
+        "Description": "Dell is nice",
+        "ImageFile": "ImageName",
+        "Price": "100"
+    },
+    {
+        "Name": "Apple Laptop",
+        "Category": "Laptop",
+        "Summary": "Apple is good laptop",
+        "Description": "Apple is nice",
+        "ImageFile": "ImageName",
+        "Price": "200"
+    }
+]
