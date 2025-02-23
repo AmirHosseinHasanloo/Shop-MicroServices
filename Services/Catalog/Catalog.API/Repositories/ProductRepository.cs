@@ -8,8 +8,8 @@ namespace Catalog.API.Repositories
     public class ProductRepository : IProductRepository
     {
         #region Constructor
-        private readonly CatalogContext _catalogContext;
-        public ProductRepository(CatalogContext catalogContext)
+        private ICatalogContext _catalogContext;
+        public ProductRepository(ICatalogContext catalogContext)
         {
             _catalogContext = catalogContext;
         }

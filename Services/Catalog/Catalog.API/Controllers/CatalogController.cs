@@ -10,14 +10,14 @@ namespace Catalog.API.Controllers
     public class CatalogController : ControllerBase
     {
         #region Dependency Injection
-        private readonly IProductRepository _productRepository;
-        private readonly ILogger<CatalogController> _logger;
+        private IProductRepository _productRepository;
+        private ILogger<CatalogController> _logger;
 
         public CatalogController(IProductRepository productRepository
             , ILogger<CatalogController> logger)
         {
-            _productRepository = productRepository;
             _logger = logger;
+            _productRepository = productRepository;
         }
         #endregion
 

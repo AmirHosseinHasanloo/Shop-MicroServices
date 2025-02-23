@@ -1,5 +1,6 @@
 using Catalog.API.Context;
 using Catalog.API.Repositories;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region Context
-
-builder.Services.AddScoped<ICatalogContext, CatalogContext>();
+builder.Services.AddSingleton<ICatalogContext, CatalogContext>();
 
 #endregion
 
@@ -21,6 +21,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 #endregion
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
