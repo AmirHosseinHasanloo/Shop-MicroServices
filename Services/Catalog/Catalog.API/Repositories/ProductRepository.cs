@@ -1,5 +1,4 @@
-﻿using System.Xml.Linq;
-using Catalog.API.Context;
+﻿using Catalog.API.Context;
 using Catalog.API.Entities;
 using MongoDB.Driver;
 

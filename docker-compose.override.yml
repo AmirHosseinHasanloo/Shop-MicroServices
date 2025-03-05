@@ -1,6 +1,6 @@
 services:
-  CatalogAPI_DB:
-    container_name: CatalogAPI_DB
+  Catalog_API_DB:
+    container_name: Catalog_API_DB
     restart: always
     volumes:
       - mongo_data:/data/db
@@ -13,8 +13,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8000
-      - "DatabaseSettings:ConnectionString=mongodb://CatalogAPI_DB:27017"
+      - "DatabaseSettings:ConnectionString=mongodb://Catalog_API_DB:27017"
     depends_on : 
-      - CatalogAPI_DB
+      - Catalog_API_DB
     ports:
       - "8000:8000"

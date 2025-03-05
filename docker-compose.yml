@@ -1,5 +1,5 @@
 services:
-  CatalogAPI_DB:
+  Catalog_API_DB:
     image: mongo
 
   catalog.api:

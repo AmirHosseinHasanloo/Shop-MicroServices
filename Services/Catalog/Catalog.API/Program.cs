@@ -1,6 +1,5 @@
 using Catalog.API.Context;
 using Catalog.API.Repositories;
-using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
