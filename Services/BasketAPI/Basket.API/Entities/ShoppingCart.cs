@@ -18,9 +18,12 @@
             get
             {
                 int totalPrice = 0;
-                foreach (var item in ShoppingCartItems)
+                if (ShoppingCartItems != null && ShoppingCartItems.Any())
                 {
-                    totalPrice += item.Price * item.Count;
+                    foreach (var item in ShoppingCartItems)
+                    {
+                        totalPrice += item.Price * item.Count;
+                    }
                 }
                 return totalPrice;
             }

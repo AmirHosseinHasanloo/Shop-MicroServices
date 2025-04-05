@@ -7,6 +7,12 @@ services:
 
     ports:
         - "27017:27017"
+        
+  Basket_API_DB:
+    container_name: Basket_API_DB
+    restart: always
+    ports:
+       - "6379:6379" 
 
   catalog.api:
     container_name: Catalog.API
@@ -18,3 +24,12 @@ services:
       - Catalog_API_DB
     ports:
       - "8000:8000"
+  basket.api:
+    container_name: Basket.API 
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8000
+      - "CacheSettings:ConnectionString=Basket_API_DB:6379" 
+    ports:
+      - "8002:8000"
+

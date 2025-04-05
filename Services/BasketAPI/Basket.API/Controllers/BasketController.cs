@@ -40,7 +40,7 @@ namespace Basket.API.Controllers
         #endregion
 
         #region Delete Basket
-        [HttpDelete("{userName}", Name = "GetBasket")]
+        [HttpDelete("{userName}", Name = "Delete")]
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteBasket(string userName)
         {
