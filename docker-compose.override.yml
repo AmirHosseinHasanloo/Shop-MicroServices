@@ -3,7 +3,7 @@ services:
     container_name: Catalog_API_DB
     restart: always
     volumes:
-      - mongo_data:/data/db
+      - ./mongo_data:/data/db
 
     ports:
         - "27017:27017"
