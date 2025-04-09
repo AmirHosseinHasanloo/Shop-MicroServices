@@ -2,6 +2,9 @@ using Discount.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+//migration
+
 // Add services to the container.
 
 builder.Services.AddControllers();

@@ -24,6 +24,9 @@ namespace Discount.API.Controllers
 
         #endregion
 
+
+        #region Get Discount
+
         /// <summary>
         /// دریافت اطلاعات کوپن تخفیف بر اساس نام محصول.
         /// </summary>
@@ -63,6 +66,10 @@ namespace Discount.API.Controllers
             }
         }
 
+        #endregion
+
+
+        #region Create Discount
 
         /// <summary>
         /// ایجاد یک تخفیف جدید.
@@ -105,6 +112,16 @@ namespace Discount.API.Controllers
             }
         }
 
+        #endregion
+
+
+        #region Update Discount
+
+        /// <summary>
+        /// ویرایش تخفیف.
+        /// </summary>
+        /// <param name="coupon">شیء کوپن شامل اطلاعات تخفیف.</param>
+        /// <returns>نتیجه‌ی عملیات ویرایش تخفیف.</returns>
         [HttpPut(Name = "UpdateDiscount")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))] // موفقیت
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))] // ورودی نامعتبر
@@ -137,6 +154,16 @@ namespace Discount.API.Controllers
             }
         }
 
+        #endregion
+
+
+        #region Delete Discount
+
+        /// <summary>
+        /// حذف تخفیف.
+        /// </summary>
+        /// <param name="productName">نام محصول مورد نظر برای حذف تخفیف</param>
+        /// <returns>نتیجه‌ی عملیات حذف تخفیف.</returns>
         [HttpDelete("[action]/{productName}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))] // موفقیت
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))] // ورودی نامعتبر
@@ -168,5 +195,7 @@ namespace Discount.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"خطای غیرمنتظره: {ex.Message}");
             }
         }
+
+        #endregion
     }
 }
