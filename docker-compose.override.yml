@@ -43,8 +43,8 @@ services:
       - "8080:8000"
       - "9000:9000"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - "portainer_data:/data"
+      - "./var/run/docker.sock:/var/run/docker.sock"
+      - "./portainer_data:/data"
 
   catalog.api:
     container_name: Catalog.API
@@ -69,12 +69,13 @@ services:
       - Basket_API_DB
 
   discount.api:
+    container_name: Discount.API
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8000
-      - "DatabaseSettings:ConnectionString=Server=Discount_Db;Port=5432;User Id=admin;Password=admin1234;"
+      - "DatabaseSettings:ConnectionString=Server=Discount_API_DB;Port=5432;Database=Discount_Db;User Id=admin;Password=admin1234;"
     ports:
       - "8003:8000"
     depends_on:
-      - Basket_API_DB
+      - Discount_API_DB
 
