@@ -1,8 +1,8 @@
 using Discount.API.Repositories;
+using Discount.API.Extentions;
+
 
 var builder = WebApplication.CreateBuilder(args);
-
-
 //migration
 
 // Add services to the container.
@@ -21,6 +21,10 @@ builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
 
 
 var app = builder.Build();
+
+
+// Migration for postgresql =>
+app.MigrateDataBase<Program>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
