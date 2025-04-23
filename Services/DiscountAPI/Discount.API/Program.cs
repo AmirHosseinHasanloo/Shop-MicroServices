@@ -3,7 +3,6 @@ using Discount.API.Extentions;
 
 
 var builder = WebApplication.CreateBuilder(args);
-//migration
 
 // Add services to the container.
 
