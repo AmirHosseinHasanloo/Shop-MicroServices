@@ -40,7 +40,7 @@ services:
     container_name: portainer
     restart: always
     ports:
-      - "8080:8000"
+      - "8080:8008"
       - "9000:9000"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -63,7 +63,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8000
       - "CacheSettings:ConnectionString=Basket_API_DB:6379"
-      - "GrpcSettings:DiscountUrl=discount.grpc"
+      - "GrpcSettings:DiscountUrl=Discount.GRPC"
     ports:
       - "8002:8000"
     depends_on:
@@ -76,19 +76,19 @@ services:
       - ASPNETCORE_URLS=http://+:8000
       - "DatabaseSettings:ConnectionString=Server=Discount_API_DB;Port=5432;Database=Discount_Db;User Id=admin;Password=admin1234;"
     ports:
-      - "8003:8000"
+      - "8004:8000"
     depends_on:
       - Discount_API_DB
 
 
   discount.grpc:
-    container_name: discount.grpc
+    container_name: Discount.GRPC
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8000
       - "DatabaseSettings:ConnectionString=Server=Discount_API_DB;Port=5432;Database=Discount_Db;User Id=admin;Password=admin1234;" 
     ports:
-      - "8004:8000"
+      - "8006:8000"
     depends_on:
       - Discount_API_DB
 
